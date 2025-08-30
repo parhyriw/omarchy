@@ -1,6 +1,4 @@
 sudo pacman -S --noconfirm --needed \
-#  1password-beta \
-#  1password-cli \
   alacritty \
   avahi \
   bash-completion \
@@ -46,7 +44,6 @@ sudo pacman -S --noconfirm --needed \
   imv \
   inetutils \
   jq \
-#  kdenlive \
   kvantum-qt5 \
   lazydocker \
   lazygit \
