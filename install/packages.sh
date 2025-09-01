@@ -1,12 +1,6 @@
 #!/bin/bash
 
 sudo pacman -S --noconfirm --needed \
-<<<<<<< HEAD
-=======
-  1password-beta \
-  1password-cli \
-  asdcontrol-git \
->>>>>>> upstream/master
   alacritty \
   avahi \
   bash-completion \

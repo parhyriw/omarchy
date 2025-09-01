@@ -18,10 +18,7 @@ source $OMARCHY_INSTALL/preflight/first-run-mode.sh
 
 # Packaging
 source $OMARCHY_INSTALL/packages.sh
-<<<<<<< HEAD
 #source $OMARCHY_INSTALL/packaging/asdcontrol.sh
-=======
->>>>>>> upstream/master
 source $OMARCHY_INSTALL/packaging/fonts.sh
 source $OMARCHY_INSTALL/packaging/lazyvim.sh
 #source $OMARCHY_INSTALL/packaging/webapps.sh
