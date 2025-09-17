@@ -9,4 +9,4 @@ pidof hyprlock || hyprlock &
 #fi
 
 # Avoid running screensaver when locked
-pkill -f "alacritty --class Screensaver"
+pkill -f "$TERMINAL --class Screensaver"
