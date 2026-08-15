@@ -116,6 +116,7 @@ case "$use_dev_packages" in
 esac
 
 # Land on the Quattro equivalent of wherever the machine already is, unless the
+<<<<<<< HEAD
 # caller said otherwise. Stable and rc machines get the production packages;
 # rc pulls them from the edge package repo while keeping its own Arch mirror.
 # Only edge takes the dev packages, since that is the channel they ship on.
@@ -123,6 +124,15 @@ if [[ -z $channel_override ]] && (( ! use_dev_packages )); then
   case "$(detect_installed_channel || true)" in
     stable) channel_override=stable ;;
     rc) channel_override=rc ;;
+=======
+# caller said otherwise. Stable machines get the production packages off the
+# stable channel. rc and edge machines stay on their own mirror, but take the
+# dev packages, because that is where Quattro lives until it ships.
+if [[ -z $channel_override ]] && (( ! use_dev_packages )); then
+  case "$(detect_installed_channel || true)" in
+    stable) channel_override=stable ;;
+    rc) channel_override=rc use_dev_packages=1 ;;
+>>>>>>> upstream/quattro
     edge) channel_override=edge use_dev_packages=1 ;;
   esac
 fi
@@ -1792,6 +1802,7 @@ CHROMIUM_FLAGS_PATCH_PY
   done
 }
 
+<<<<<<< HEAD
 # True if any Chromium-family browser that stores the Copy URL shortcut is running.
 browser_is_running() {
   pgrep -x 'chromium|chrome|brave|msedge|vivaldi-bin|vivaldi|opera|helium' >/dev/null 2>&1
@@ -1868,6 +1879,8 @@ CHROMIUM_SHORTCUTS_PATCH_PY
   done
 }
 
+=======
+>>>>>>> upstream/quattro
 repair_sleep_lock_unit_override() {
   local unit="$HOME/.config/systemd/user/omarchy-sleep-lock.service"
   local legacy_exec='ExecStart=%h/.local/share/omarchy/bin/omarchy-system-sleep-monitor'
@@ -1964,7 +1977,10 @@ copy_missing_config_defaults "$root/config" "$HOME/.config"
 mark_removed_preinstalls_from_legacy_bindings
 copy_always_config_defaults
 repair_chromium_copy_url_extension_flags
+<<<<<<< HEAD
 repair_chromium_copy_url_shortcuts
+=======
+>>>>>>> upstream/quattro
 
 # Carry over user-added backgrounds from the legacy git checkout backup, then
 # remove old symlinks that pointed ~/.config/omarchy/themes/* back into the
